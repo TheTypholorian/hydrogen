@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bitMath.cpp" />
     <ClCompile Include="collections.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="collections.h" />
-    <ClInclude Include="main.h" />
+    <ClInclude Include="bitMath.hpp" />
+    <ClInclude Include="collections.hpp" />
+    <ClInclude Include="main.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -1,5 +1,5 @@
-#include "main.h"
-#include "collections.h"
+#include "main.hpp"
+#include "collections.hpp"
 
 #ifndef IteratorDefaults
 #define IteratorDefaults
@@ -74,17 +74,26 @@ T ArrayIterator<T>::operator*() {
 #define ArrayImpl
 
 template <typename T>
-Array<T>::Array(int size) : size(size) {
-	data = new T[size];
+Array<T>::Array(hushort size) : size(size), data(new T[size]()) {
+}
 
-	for (int i = 0; i < size; i++) {
-		data[i] = i;
-	}
+template <typename T>
+Array<T>::Array(T* data, hushort size) : data(data), size(size) {
+}
+
+template <typename T>
+Array<T>::Array(hushort size, hbool free) : size(size), data(new T[size]()), free(free) {
+}
+
+template <typename T>
+Array<T>::Array(T* data, hushort size, hbool free) : data(data), size(size), free(free) {
 }
 
 template <typename T>
 Array<T>::~Array() {
-	delete[] data;
+	if (free) {
+		delete[] data;
+	}
 }
 
 template <typename T>

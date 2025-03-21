@@ -1,5 +1,4 @@
-#ifndef COLLECTIONS_H_INCLUDED
-#define COLLECTIONS_H_INCLUDED
+#pragma once
 
 template <typename T>
 class Iterator {
@@ -59,9 +58,16 @@ template <typename T>
 class Array : public Iterable<T> {
 public:
 	T* data;
-	int size;
+	hushort size;
+	bool free;
 
-	Array(int size);
+	Array(hushort size);
+
+	Array(T* data, hushort size);
+
+	Array(hushort size, hbool free);
+
+	Array(T* data, hushort size, hbool free);
 
 	~Array();
 
@@ -69,5 +75,3 @@ public:
 };
 
 #include "collections.cpp"
-
-#endif // COLLECTIONS_H_INCLUDED
