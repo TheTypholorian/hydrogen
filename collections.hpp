@@ -1,77 +1,44 @@
-#pragma once
+#include "hydrogen.hpp"
+#include <functional>
+#include <string>
+#include <iostream>
 
-template <typename T>
-class Iterator {
-public:
-	virtual ~Iterator() = default;
+using namespace std;
 
-	virtual int getIndex() = 0;
+namespace H {
+	template <typename T>
+	class Iterator {
+	public:
+		virtual ~Iterator() = default;
 
-	virtual int getSize() = 0;
+		virtual Iterator<T>& operator++() = 0;
 
-	bool hasNext();
+		virtual T& operator*() const = 0;
 
-	bool hasPrevious();
+		virtual bool operator==(const Iterator<T>&) const = 0;
 
-	virtual T operator++() = 0;
+		virtual bool operator!=(const Iterator<T>&) const = 0;
+	};
 
-	virtual T operator--() = 0;
+	template <typename T, typename It>
+	class Collection {
+	public:
+		virtual huint getSize() const = 0;
 
-	virtual bool operator!=(const Iterator<T>& other) const = 0;
+		virtual hbool isEmpty() const {
+			return !getSize();
+		}
 
-	virtual T operator*() = 0;
-};
+		virtual void add(T t) = 0;
 
-template <typename T>
-class Iterable {
-public:
-	virtual ~Iterable() = default;
+		//virtual void addAll(Collection<T> t) = 0;
 
-	virtual Iterator<T>* iterator() = 0;
+		virtual void remove(T t) = 0;
 
-	void forEach(function<void(T)> out);
-};
+		//virtual void removeAll(Collection<T> t) = 0;
 
-template <typename T>
-class ArrayIterator : public Iterator<T> {
-public:
-	T* data;
-	int index;
-	int totalSize;
+		virtual It begin() const = 0;
 
-	ArrayIterator(T* data, int size, int index = 0);
-
-	int getIndex();
-
-	int getSize();
-
-	T operator++();
-
-	T operator--();
-
-	bool operator!=(const Iterator<T>& other) const;
-
-	T operator*();
-};
-
-template <typename T>
-class Array : public Iterable<T> {
-public:
-	T* data;
-	hushort size;
-	bool free;
-
-	Array(hushort size);
-
-	Array(T* data, hushort size);
-
-	Array(hushort size, hbool free);
-
-	Array(T* data, hushort size, hbool free);
-
-	~Array();
-
-	Iterator<T>* iterator();
-};
-
-#include "collections.cpp"
+		virtual It end() const = 0;
+	};
+}
