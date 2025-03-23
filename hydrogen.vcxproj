@@ -19,14 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bitMath.cpp" />
     <ClCompile Include="rect2D.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="array.hpp" />
     <ClInclude Include="bitMath.hpp" />
-    <ClInclude Include="collections.hpp" />
     <ClInclude Include="hydrogen.hpp" />
+    <ClInclude Include="io.hpp" />
+    <ClInclude Include="linkedList.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

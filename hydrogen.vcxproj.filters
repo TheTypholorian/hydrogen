@@ -15,24 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bitMath.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="rect2D.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="collections.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="hydrogen.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bitMath.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="array.hpp">
+    <ClInclude Include="linkedList.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
