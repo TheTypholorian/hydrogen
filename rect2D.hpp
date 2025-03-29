@@ -224,61 +224,61 @@ namespace H {
 
 		Rect2D<T>& operator+(const Rect2D<T>& rect) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n += rect;
+			*n += rect;
 			return *n;
 		}
 
 		Rect2D<T>& operator+(T t) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n += t;
+			*n += t;
 			return *n;
 		}
 
 		Rect2D<T>& operator-(const Rect2D<T>& rect) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n -= rect;
+			*n -= rect;
 			return *n;
 		}
 
 		Rect2D<T>& operator-(T t) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n -= t;
+			*n -= t;
 			return *n;
 		}
 
 		Rect2D<T>& operator*(const Rect2D<T>& rect) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n *= rect;
+			*n *= rect;
 			return *n;
 		}
 
 		Rect2D<T>& operator*(T t) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n *= t;
+			*n *= t;
 			return *n;
 		}
 
 		Rect2D<T>& operator/(const Rect2D<T>& rect) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n /= rect;
+			*n /= rect;
 			return *n;
 		}
 
 		Rect2D<T>& operator/(T t) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n /= t;
+			*n /= t;
 			return *n;
 		}
 
 		Rect2D<T>& operator%(const Rect2D<T>& rect) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n %= rect;
+			*n %= rect;
 			return *n;
 		}
 
 		Rect2D<T>& operator%(T t) {
 			Rect2D<T>* n = new Rect2D<T>(x, y, w, h);
-			n %= t;
+			*n %= t;
 			return *n;
 		}
 	};
