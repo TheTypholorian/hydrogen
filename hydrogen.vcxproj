@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bitMath.hpp" />
-    <ClInclude Include="hydrogen.hpp" />
     <ClInclude Include="io.hpp" />
     <ClInclude Include="linkedList.hpp" />
     <ClInclude Include="stackTrace.hpp" />
