@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="io.cpp" />
     <ClCompile Include="rect2D.hpp" />
   </ItemGroup>
   <ItemGroup>
